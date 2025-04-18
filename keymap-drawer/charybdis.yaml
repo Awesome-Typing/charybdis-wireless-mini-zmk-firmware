@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: charybdis}
 layers:
-  '0':
+  Base:
   - {t: ESC, h: SYSTEM}
   - Q
   - W
@@ -23,9 +23,9 @@ layers:
   - {t: J, h: RIGHT GUI}
   - {t: K, h: RSHFT}
   - {t: L, h: RIGHT ALT}
-  - {t: ;, h: RIGHT CONTROL}
-  - DEL
-  - LSHFT
+  - {t: ;, h: RCTRL}
+  - '&all_quotes'
+  - {t: Navigation, h: toggle}
   - Z
   - X
   - C
@@ -43,7 +43,7 @@ layers:
   - {t: ESC, h: SYSTEM}
   - RET
   Game:
-  - {t: ESC, h: '0'}
+  - {t: ESC, h: Base}
   - Q
   - W
   - E
@@ -53,8 +53,8 @@ layers:
   - U
   - I
   - O
-  - L
-  - {t: '0', h: toggle}
+  - P
+  - {t: Base, h: toggle}
   - TAB
   - A
   - S
@@ -66,7 +66,7 @@ layers:
   - K
   - L
   - ;
-  - '&all_quotes'
+  - {t: ▽, type: trans}
   - LSHFT
   - Z
   - X
@@ -78,7 +78,7 @@ layers:
   - ','
   - .
   - /
-  - Scroll
+  - {t: ▽, type: trans}
   - {t: LEFT COMMAND, h: sticky}
   - SPACE
   - Digits
@@ -128,7 +128,7 @@ layers:
   - {t: ▽, type: trans}
   Digits:
   - {t: ▽, type: trans}
-  - '|'
+  - '~'
   - $
   - '{'
   - '}'
@@ -138,7 +138,7 @@ layers:
   - '8'
   - '9'
   - ;
-  - {t: '0', h: toggle}
+  - {t: Base, h: toggle}
   - {t: ▽, type: trans}
   - {t: '!', h: LCTRL}
   - {t: '@', h: LEFT ALT}
@@ -149,11 +149,11 @@ layers:
   - '4'
   - '5'
   - '6'
-  - KP MULTIPLY
+  - '*'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '|'
   - '&'
-  - LCTRL
   - {t: '[', h: <}
   - {t: ']', h: '>'}
   - '&less_or_equal'
@@ -288,7 +288,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
