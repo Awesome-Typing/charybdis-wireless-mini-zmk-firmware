@@ -140,7 +140,7 @@ parse_config:
     GT: ">"
     QUESTION: "?"
     QUES: "?"
-  zmk_remove_keycode_prefix: ["&"]
+  zmk_remove_keycode_prefix: []
   zmk_keycode_map:
     EXCLAMATION: "!"
     EXCL: "!"
@@ -239,9 +239,9 @@ parse_config:
     F12: "DEV TOOLS"
     BRIGHTNESS INC: "BRIGHT ▲"
     BRIGHTNESS DEC: "BRIGHT ▼"
-    more_or_equal: ">="
-    fun_arrow_right: "->"
-    less_or_equal: "<="
+    "&more_or_equal": ">="
+    "&fun_arrow_right": "->"
+    "&less_or_equal": "<="
     KP_MULTIPLY: "*"
   zmk_combos: {}
   zmk_preamble: "#define KEYMAP_DRAWER"
