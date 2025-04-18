@@ -140,7 +140,7 @@ parse_config:
     GT: ">"
     QUESTION: "?"
     QUES: "?"
-  zmk_remove_keycode_prefix: []
+  zmk_remove_keycode_prefix: ["&"]
   zmk_keycode_map:
     EXCLAMATION: "!"
     EXCL: "!"
