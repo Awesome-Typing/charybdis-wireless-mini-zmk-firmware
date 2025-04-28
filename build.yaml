@@ -22,12 +22,12 @@ include:
     shield: totem_left
     keymap: qwerty
     format: bt
-    artifact-name: charybdis_qwerty_left
+    artifact-name: totem_qwerty_left
   - board: seeeduino_xiao_ble
     shield: totem_right
     keymap: qwerty
     format: bt
-    artifact-name: charybdis_qwerty_right
+    artifact-name: totem_qwerty_right
 
 #  # QWERTY BT
 #  - board: nice_nano_v2
