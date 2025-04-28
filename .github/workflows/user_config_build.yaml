@@ -132,8 +132,7 @@ jobs:
         # Copy active keymap to the board directory
           cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
           "$base_config_path/totem.keymap"
-
-          echo "format: ${{ env.format }}"
+               
           fi
 
           # Remove untargeted shields so they don't get auto picked up by the west build command
