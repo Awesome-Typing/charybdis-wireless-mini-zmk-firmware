@@ -125,17 +125,17 @@ jobs:
             # Copy config files
             cp -R "${{ inputs.config_path }}"/* "$base_config_path/"
             echo "config files ready"
-            
-            # Copy keymap & physical layouts
-            if [ "${{ env.shield }}" != "settings_reset" ]; then
-              # Copy physical layout file to shield directory
-              mv -v "$base_config_path/charybdis-layouts.dtsi" \
-              "${GITHUB_WORKSPACE}/boards/shields/totem-${{ env.format }}/"
 
-              # Copy active keymap to the board directory & adjust for bt/dongle format
-              cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
-                "$base_config_path/totem.keymap"
-              echo "format: ${{ env.format }}"
+#            # Copy keymap & physical layouts
+#            if [ "${{ env.shield }}" != "settings_reset" ]; then
+#              # Copy physical layout file to shield directory
+#              mv -v "$base_config_path/charybdis-layouts.dtsi" \
+#              "${GITHUB_WORKSPACE}/boards/shields/totem-${{ env.format }}/"
+#
+#              # Copy active keymap to the board directory & adjust for bt/dongle format
+#              cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
+#                "$base_config_path/totem.keymap"
+#              echo "format: ${{ env.format }}"
 #              case "${{ env.format }}" in
 #                *bt*)
 #                  echo "converting trackball device to bt/usb format"
@@ -143,7 +143,20 @@ jobs:
 #                  grep "device = <" "$base_config_path/totem.keymap"
 #                  ;;
 #              esac
-            fi
+#            fi
+#          fi
+          
+          # Copy keymap & physical layouts
+          if [ "${{ env.shield }}" != "settings_reset" ]; then
+          # Copy physical layout file to shield directory
+#          mv -v "$base_config_path/charybdis-layouts.dtsi" \
+#          "${GITHUB_WORKSPACE}/boards/shields/totem-${{ env.format }}/"
+
+        # Copy active keymap to the board directory
+          cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
+          "$base_config_path/totem.keymap"
+
+          echo "format: ${{ env.format }}"
           fi
 
           # Remove untargeted shields so they don't get auto picked up by the west build command
