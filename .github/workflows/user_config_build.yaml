@@ -126,12 +126,12 @@ jobs:
             cp -R "${{ inputs.config_path }}"/* "$base_config_path/"
             echo "config files ready"
 
-          # Copy keymap & physical layouts
-          if [ "${{ env.shield }}" != "settings_reset" ]; then
+            # Copy keymap & physical layouts
+            if [ "${{ env.shield }}" != "settings_reset" ]; then
 
-        # Copy active keymap to the board directory
-          cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
-          "$base_config_path/totem.keymap"
+            # Copy active keymap to the board directory
+            cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
+            "$base_config_path/totem.keymap"
                
           fi
 
