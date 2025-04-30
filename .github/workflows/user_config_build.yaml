@@ -129,10 +129,10 @@ jobs:
             # Copy keymap & physical layouts
             if [ "${{ env.shield }}" != "settings_reset" ]; then
 
-            # Copy active keymap to the board directory
-            cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
-            "$base_config_path/totem.keymap"
-               
+              # Copy active keymap to the board directory
+              cp -Rv "$GITHUB_WORKSPACE/${{ inputs.keymap_path }}/${{ env.keymap }}.keymap" \
+              "$base_config_path/totem.keymap"
+            fi
           fi
 
           # Remove untargeted shields so they don't get auto picked up by the west build command
