@@ -229,7 +229,7 @@ jobs:
     needs: build
     name: Merge & Prune Artifacts (optional)
     steps:
-      - name: Upload Charybdis ZMK Firmware (QWERTY BT)
+      - name: Upload KB ZMK Firmware (QWERTY BT)
         continue-on-error: true
         uses: actions/upload-artifact/merge@v4
         with:
@@ -237,7 +237,7 @@ jobs:
           name: firmware-totem-qwerty
           delete-merged: true
 
-      - name: Upload Charybdis ZMK Firmware (QWERTY Dongle)
+      - name: Upload KB ZMK Firmware (QWERTY Dongle)
         continue-on-error: true
         uses: actions/upload-artifact/merge@v4
         with:
@@ -245,7 +245,7 @@ jobs:
           name: firmware-totem-qwerty-dongle
           delete-merged: true
 
-      - name: Upload Charybdis ZMK Firmware (Colemak BT)
+      - name: Upload KB ZMK Firmware (Colemak BT)
         continue-on-error: true
         uses: actions/upload-artifact/merge@v4
         with:
@@ -253,7 +253,7 @@ jobs:
           name: firmware-totems-colemak
           delete-merged: true
 
-      - name: Upload Charybdis ZMK Firmware (Colemak Dongle)
+      - name: Upload KB ZMK Firmware (Colemak Dongle)
         continue-on-error: true
         uses: actions/upload-artifact/merge@v4
         with:
@@ -265,8 +265,8 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact/merge@v4
         with:
-          pattern: artifact-firmware_reset_nano_v2
-          name: firmware-reset-nanov2
+          pattern: artifact-firmware_reset*
+          name: firmware-reset
           delete-merged: true
 
       - name: Delete keymap artifacts
