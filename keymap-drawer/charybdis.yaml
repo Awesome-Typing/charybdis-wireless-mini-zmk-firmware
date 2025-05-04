@@ -24,7 +24,7 @@ layers:
   - {t: K, h: RSHFT}
   - {t: L, h: RIGHT ALT}
   - {t: ;, h: RCTRL}
-  - '&all_quotes'
+  - ''' `'
   - {t: Navigation, h: toggle}
   - Z
   - X
@@ -132,7 +132,7 @@ layers:
   - $
   - '{'
   - '}'
-  - '&more_or_equal'
+  - '>='
   - +
   - '7'
   - '8'
@@ -144,7 +144,7 @@ layers:
   - {t: '@', h: LEFT ALT}
   - {t: (, h: LSHFT}
   - {t: ), h: LEFT COMMAND}
-  - '&fun_arrow_right'
+  - ->
   - '='
   - '4'
   - '5'
@@ -156,7 +156,7 @@ layers:
   - '&'
   - {t: '[', h: <}
   - {t: ']', h: '>'}
-  - '&less_or_equal'
+  - <=
   - {t: '-', h: _}
   - '1'
   - '2'
