@@ -55,7 +55,8 @@ parse_config:
     "&less_or_equal": "<=",
     "&all_quotes":
       tap: "'"
-      shifted: "`"
+      hold: "`"
+      shifted: '"'
   }
   sticky_label: sticky
   toggle_label: toggle
