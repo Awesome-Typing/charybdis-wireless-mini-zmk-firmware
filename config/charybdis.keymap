@@ -21,58 +21,26 @@
 #define SYS  4
 #define MOUSE  5
 #define SCROLL 6
+#define SNIPE 8
 
 / {
-    /* input config for mouse move mode */
     trackball_listener {
-        compatible = "zmk,input-behavior-listener";
+        compatible = "zmk,input-listener";
         device = <&vtrackball>;
-        layers = <0 1 2 3 4 5 6>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <4>;
-        scale-divisor = <5>;
-        bindings = <&ib_toggle_layer MOUSE>;
-    };
+        // scaler: first is multiplier, second one is divider.
+        // temp layer: first argument is layer, second is time in ms
+        input-processors = <&zip_xy_scaler 1 3>, <&zip_temp_layer MOUSE 1000>;
 
-    /* input config for snipe mode */
-    trackball_snipe_listener {
-        compatible = "zmk,input-behavior-listener";   
-        device = <&vtrackball>;
-        layers = <8>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <6>;
-    };
+        snipe {
+            layers = <SNIPE>;
+            input-processors = <&zip_xy_scaler 1 18>;
+        };
 
-    /* input config for mouse scroll mode */
-    trackball_scroll_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <6>;
-        evt-type = <INPUT_EV_REL>;            
-        x-input-code = <INPUT_REL_MISC>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        y-invert;
-        bindings = <&ib_wheel_scaler 1 14>;
-    };
-
-    /* define a resolution down scaler only for INPUT_REL_WHEEL */
-    ib_wheel_scaler: ib_wheel_scaler {
-        compatible = "zmk,input-behavior-scaler";
-        #binding-cells = <2>;
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
-    };
-
-    /* adjust cooldown waiting period for mouse key layer after activated */
-    ib_toggle_layer: ib_toggle_layer {
-        compatible = "zmk,input-behavior-tog-layer";
-        #binding-cells = <1>;
-        time-to-live-ms = <750>;
+        scroll {
+            layers = <SCROLL>;
+            // scaler: first is multiplier, second one is divider.
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
+        };
     };
 
 
@@ -87,7 +55,7 @@
 // ├────────────────┼─────────────────┼─────────────────────────────┼────────────────────┼──────────────────────┼────────┤  ├────────────────┼─────────────────────────┼───────────────────┼──────────────────────────┼──────────────────────────┼──────────────┤
     &kp TAB           &hm_left LCTRL A  &hm_left LEFT_ALT S          &hm_left LSHFT D      &hm_left LEFT_COMMAND F &kp G       &kp H             &hm_right RIGHT_GUI J   &hm_right RSHFT K     &hm_right RIGHT_ALT L     &hm_right RCTRL SEMICOLON  &all_quotes
 // ├────────────────┼─────────────────┼─────────────────────────────┼────────────────────┼──────────────────────┼────────┤  ├────────────────┼─────────────────────────┼───────────────────┼──────────────────────────┼──────────────────────────┼──────────────┤
-    &to NAV           &kp Z             &kp X                        &kp C                 &kp V                   &kp B       &kp N             &kp M                   &kp COMMA             &kp DOT                   &comment_or 0 SLASH        &to DIG
+    &to NAV           &kp Z             &kp X                        &kp C                 &kp V                   &kp B       &kp N             &kp M                   &hmr_layer SNIPE COMMA &hmr_layer SCROLL DOT     &comment_or 0 SLASH        &to DIG
 // ╰────────────────┴─────────────────┴─────────────────────────────┼────────────────────┼──────────────────────┼────────┤  ├────────────────┼─────────────────────────┼───────────────────┴──────────────────────────┴──────────────────────────┴──────────────╯
                                                                 &sk LEFT_COMMAND     &space_or_super SPACE SPACE &mo DIG      &lt SYS ESC       &kp RET
                                                             // ╰───────────────────┴────────────────────────────┴────────╯  ╰────────────────┴─────────────────────────╯
@@ -167,6 +135,16 @@
 
         SCROLL {
             label = "Scroll";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+
+        SNIPE {
+            label = "Snipe";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
