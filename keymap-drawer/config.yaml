@@ -50,9 +50,9 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map:
-    "&more_or_equal": ">=",
-    "&fun_arrow_right": "->",
-    "&less_or_equal": "<=",
+    "&more_or_equal": ">="
+    "&fun_arrow_right": "->"
+    "&less_or_equal": "<="
     "&all_quotes":
       t: "'"
       h: "`"
