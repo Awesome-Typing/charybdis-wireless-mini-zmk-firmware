@@ -53,7 +53,8 @@ parse_config:
     "&more_or_equal": ">=",
     "&fun_arrow_right": "->",
     "&less_or_equal": "<=",
-    "$all_quotes": {"'", "'"}
+    "&all_quotes": {"'", "'"},
+    "&space_or_super": {"SPACE", "Super"}
   }
   sticky_label: sticky
   toggle_label: toggle
