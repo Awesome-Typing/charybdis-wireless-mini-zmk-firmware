@@ -23,7 +23,7 @@
 #define SYS  4
 #define MOUSE  5
 #define SCROLL 6
-#define SNIPE 8
+#define SNIPE 7
 
 / {
     trackball_listener {
