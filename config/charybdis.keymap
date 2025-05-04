@@ -29,7 +29,7 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&vtrackball>;
-        layers = <BASE, GAME, NAV, DIG, SYS, MOUSE>;
+        layers = <BASE>, <GAME>, <NAV>, <DIG>, <SYS>, <MOUSE>;
         // scaler: first is multiplier, second one is divider.
         // temp layer: first argument is layer, second is time in ms
         input-processors = <&zip_xy_scaler 1 3>, <&zip_temp_layer MOUSE 1000>;
