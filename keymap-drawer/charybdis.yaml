@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: Game, h: toggle}
+  - DELETE
   - TAB
   - {t: A, h: LCTRL}
   - {t: S, h: LEFT ALT}
@@ -35,8 +35,8 @@ layers:
   - M
   - {t: ',', h: Snipe}
   - {t: ., h: Scroll}
-  - {t: /, h: '&comment'}
-  - {t: Digits, h: toggle}
+  - /
+  - {t: Game, h: toggle}
   - {t: LEFT COMMAND, h: sticky}
   - {t: SPACE, h: '&super SPACE'}
   - Digits
