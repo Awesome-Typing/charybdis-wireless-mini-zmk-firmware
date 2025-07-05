@@ -4,15 +4,10 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &charybdis_physical_layout;
     };
 
-    // ZMK Studio
-    // chosen {
-    //     zmk,kscan = &kscan0;
-    //     zmk,physical-layout = &charybdis_physical_layout;
-    // };
-
+    /* battery monitor*/
     vbatt: vbatt {
 	compatible = "zmk,battery-nrf-vddh";
     };

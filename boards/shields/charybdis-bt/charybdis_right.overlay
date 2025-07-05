@@ -1,5 +1,6 @@
 #include "charybdis.dtsi"
 #include "charybdis_pmw3610.dtsi"
+#include "charybdis_pointer.dtsi"
 
 // The matrix transform is 6 columns over because the left half is 6 columns wide.
 &default_transform {
@@ -10,9 +11,10 @@
 	col-offset = <5>;
 };
 
+// KSCAN matrix
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
-	
+
 	col-gpios
 		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -30,18 +32,8 @@
 		;
 };
 
-&spi0 {
+/* enable the listener on central */
+&trackball_listener {
     status = "okay";
-};
-
-&trackball {
-    status = "okay";
-};
-
-// https://github.com/badjeff/zmk-pmw3610-driver
-/ {
-  trackball_listener {
-    compatible = "zmk,input-listener";
     device = <&trackball>;
-  };
 };
