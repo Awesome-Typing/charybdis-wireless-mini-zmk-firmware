@@ -8,13 +8,13 @@ def main():
     #####################################################################
     # Define variables & write output keymap file
     #####################################################################
-
+    
     parser = argparse.ArgumentParser(
         description="Convert ZMK keymap files between layouts (e.g. QWERTY⇄Colemak DH)"
     )
     parser.add_argument(
-        '-c', '--convert',
-        type=str,
+        '-c', '--convert', 
+        type=str, 
         choices=LAYOUT_MAPS.keys(),
         default='q2c',
         help="Conversion: 'q2c' QWERTY→ColemakDH, 'c2q' ColemakDH→QWERTY, etc."
@@ -86,7 +86,7 @@ def main():
     # else:
         # print(">> Converted BASE layer:\n")
         # print(base_only.group(1) + base_only.group(2) + base_only.group(3))
-
+        
 
 
     # Write to output file
