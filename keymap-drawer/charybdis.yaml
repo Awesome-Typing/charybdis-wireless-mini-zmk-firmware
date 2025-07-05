@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - DELETE
+  - BACK SPACE
   - TAB
   - {t: A, h: LCTRL}
   - {t: S, h: LEFT ALT}
