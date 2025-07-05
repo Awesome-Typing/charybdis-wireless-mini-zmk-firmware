@@ -54,7 +54,7 @@ layers:
   - I
   - O
   - P
-  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
   - TAB
   - A
   - S
@@ -78,7 +78,7 @@ layers:
   - ','
   - .
   - /
-  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
   - {t: LEFT COMMAND, h: sticky}
   - SPACE
   - Digits
@@ -120,7 +120,7 @@ layers:
   - ''
   - Alt+ RIGHT
   - {t: PAGE DOWN, h: toggle}
-  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
   - {t: ▽, type: trans}
   - {t: SPACE, h: '&super SPACE'}
   - {t: ▽, type: trans}
@@ -138,7 +138,7 @@ layers:
   - '8'
   - '9'
   - ;
-  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '!', h: LCTRL}
   - {t: '@', h: LEFT ALT}
@@ -162,7 +162,7 @@ layers:
   - '2'
   - '3'
   - .
-  - /
+  - {t: Base, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
