@@ -1,4 +1,3 @@
-
 # Reusable workflow for drawing and committing an automated keymap diagram
 name: Draw ZMK keymaps
 on:
