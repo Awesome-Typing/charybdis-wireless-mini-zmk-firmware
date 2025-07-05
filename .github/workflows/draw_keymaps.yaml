@@ -232,7 +232,7 @@ jobs:
 
               # BASE-only render
               keymap "${config_arg[@]}" draw "${{ inputs.output_folder }}/$keyboard.yaml" \
-                -s BASE --keys-only $([[ -n "$json_path/${keyboard}.json" ]] && echo "-j $json_path/${keyboard}.json") \
+               --keys-only $([[ -n "$json_path/${keyboard}.json" ]] && echo "-j $json_path/${keyboard}.json") \
                 > "${{ inputs.output_folder }}/base/$keyboard.svg" \
               || error_occurred=1
 
