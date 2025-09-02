@@ -36,7 +36,7 @@ groups.append({
     "keymap": "default",
     "format": "dongle",
     "name": "charbdis_dongle_screen",
-    "shield": "charybdis_dongle dongle_screen"
+    "shield": "charybdis_dongle dongle_screen",
     "board": "seeeduino_xiao_ble",
 })
 
