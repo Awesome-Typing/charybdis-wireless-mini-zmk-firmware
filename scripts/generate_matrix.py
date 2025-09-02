@@ -32,5 +32,13 @@ groups.append({
     "board": board,
 })
 
+groups.append({
+    "keymap": "default",
+    "format": "dongle",
+    "name": "charbdis_dongle_screen",
+    "shield": "charybdis_dongle dongle_screen"
+    "board": "seeeduino_xiao_ble",
+})
+
 # Dump matrix as compact JSON (GitHub expects it this way)
 print(json.dumps(groups))
