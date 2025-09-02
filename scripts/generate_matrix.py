@@ -33,7 +33,7 @@ groups.append({
 })
 
 groups.append({
-    "keymap": "default",
+    "keymap": "qwerty",
     "format": "dongle",
     "name": "charbdis_dongle_screen",
     "shield": "charybdis_dongle dongle_screen",
